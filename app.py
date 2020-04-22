@@ -3,6 +3,7 @@ import pickle
 import praw
 from bs4 import BeautifulSoup
 import re
+import os
 import nltk
 from nltk.corpus import stopwords
 nltk.download('stopwords')
@@ -53,8 +54,24 @@ def prediction(url):
 app = flask.Flask(__name__)
 
 # routes
+@app.route('/automated_testing', methods=['GET', 'POST'])
+def home():
+    if flask.request.method == 'GET':
+        # Just render the initial form, to get input
+        return(flask.render_template('main.html'))
+    
+    if flask.request.method == 'POST':
+        file = flask.request.files['file']
+        out = {}
+        Lines = file.readlines() 
+        for line in Lines:
+            url = line.decode('UTF-8')
+            temp = prediction(url[0:-1])
+            out[url[0:-1]] = temp[0]
+        return flask.jsonify(out)
+            
+     
 @app.route('/', methods=['GET', 'POST'])
-
 def main():
     if flask.request.method == 'GET':
         # Just render the initial form, to get input
