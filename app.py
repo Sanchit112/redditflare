@@ -1,4 +1,3 @@
-import pandas as pd
 import flask
 import pickle
 import praw
@@ -55,7 +54,13 @@ app = flask.Flask(__name__)
 
 # routes
 @app.route('/', methods=['GET', 'POST'])
-def main():  
+
+def main():
+    if flask.request.method == 'GET':
+        # Just render the initial form, to get input
+        return(flask.render_template('main.html'))
+    
+    
     if flask.request.method == 'POST':
         # Extract the input
         text = flask.request.form['url']
