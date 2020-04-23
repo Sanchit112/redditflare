@@ -10,11 +10,11 @@ nltk.download('stopwords')
 
 # load model
 model = pickle.load(open('model.pkl','rb'))
-reddit = praw.Reddit(client_id='mc9lbLzZ-4Il6Q',
-                     client_secret='H4PTkK1nNC6RCqzLp8gvfvgWLCI',
+reddit = praw.Reddit(client_id=@Client_id,
+                     client_secret=@CLient_secret,
                      user_agent='reddit_scraper',
-                     username= "sanchit112",
-                     password= "Death112")
+                     username= @Username,
+                     password= @Password)
 
 
 r1 = re.compile('[/(){}\[\]\|@,;]')
