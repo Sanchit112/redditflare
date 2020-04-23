@@ -10,11 +10,11 @@ nltk.download('stopwords')
 
 # load model
 model = pickle.load(open('model.pkl','rb'))
-reddit = praw.Reddit(client_id=@Client_id,
-                     client_secret=@CLient_secret,
+reddit = praw.Reddit(client_id='mc9lbLzZ-4Il6Q',
+                     client_secret='H4PTkK1nNC6RCqzLp8gvfvgWLCI',
                      user_agent='reddit_scraper',
-                     username= @Username,
-                     password= @Password)
+                     username= "sanchit112",
+                     password= "Death112")
 
 
 r1 = re.compile('[/(){}\[\]\|@,;]')
@@ -61,7 +61,7 @@ def home():
         return(flask.render_template('main.html'))
     
     if flask.request.method == 'POST':
-        file = flask.request.files['file']
+        file = flask.request.files['files']
         out = {}
         Lines = file.readlines() 
         for line in Lines:
