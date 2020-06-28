@@ -11,5 +11,3 @@ Copy the redditflare.ipnyb file to colab and run it to get a model.pkl file
 ## Deployment
 The app is deployed on heroku.
 app.py contains the flask code and requirements.txt containts the requirements for heroku
-
-## Test the app here: https://redditflare.herokuapp.com
