@@ -9,7 +9,7 @@
 <!-- TABLE OF CONTENTS -->
 ## Table of Contents
 * [About the Project](#about-the-project)
-* [Getting Started](#getting-st
+* [Getting Started](#getting-started)
 * [License](#license)
 * [Contact](#contact)
 
